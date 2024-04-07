@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <section id="home" class="home">
+            <h1>Home</h1>
+        </section>
+
+        <section id="about" class="about">
+            <h1>About</h1>
+        </section>
+
+        <section id="customs" class="customs">
+            <h1>Customs</h1>
+        </section>
+
+        <section id="contact" class="contact">
+            <h1>Contact</h1>
+        </section>
+    </div>
+</body>
+</html>

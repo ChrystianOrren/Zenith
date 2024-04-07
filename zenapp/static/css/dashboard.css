@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&family=Original+Surfer&display=swap');
+
+*{
+    font-family: "Edu QLD Beginner", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3DFBF; 
+    border: 1px solid black;
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
+.home {
+    background-image: url("../images/FB_background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/*
+.home {
+    
+}
+
+.about {
+    
+}
+
+.customs {
+    
+}
+
+.contact {
+    
+}
+*/

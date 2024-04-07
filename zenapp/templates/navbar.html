@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+<body>
+    <header class="header" id="header">
+        <a href="#home" class="logo">Zenith</a>
+
+        <button class="hamburger-button" onclick="toggleMenu()" id="hamburger-button"></button>
+        <div class="hamburger-menu" id ="hamburger-menu">
+            <a href="#home" onclick="toggleMenu()">Home</a>
+            <a href="{% url 'shop' %}">Shop</a>
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="#customs" onclick="toggleMenu()">Customs</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+        
+        <nav class="navbar">
+            <a href="#home" onclick="diffPageLink(event)">Home</a>
+            <a href="{% url 'shop' %}" onclick="diffPageLink(event)">Shop</a>
+            <a href="#about" onclick="diffPageLink(event)">About</a>
+            <a href="#customs" onclick="diffPageLink(event)">Customs</a>
+            <a href="#contact" onclick="diffPageLink(event)">Contact</a>
+        </nav>
+
+    </header>
+
+    <script>
+        function diffPageLink(event) {
+            var page_title = document.title
+            var href = event.target.getAttribute("href");
+            if (page_title == "Dashboard") {
+                console.log("Dashboard");
+            }
+            else{
+                if (href && href.startsWith("#")) {
+                    console.log("Redirecting to Dashboard: ", href);
+                    return_path = "/" + href;
+                    window.location.href = return_path;
+                }
+                else {
+                    return;
+                }
+            }
+        }
+
+        function toggleMenu() {
+            var ham_menu = document.getElementById("hamburger-menu");
+            ham_menu.classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>
