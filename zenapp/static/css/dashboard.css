@@ -17,7 +17,6 @@ body, html {
     flex-direction: column;
     height: 100%;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
 }
 
 section {
@@ -26,20 +25,14 @@ section {
     justify-content: center;
     align-items: center;
     background-color: #F3DFBF; 
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     min-height: 100vh;
-    scroll-snap-align: start;
 }
 
 .home {
     background-image: url("../images/FB_background.jpg");
     background-size: cover;
     background-position: center;
-}
-
-/*
-.home {
-    
 }
 
 .about {
@@ -53,4 +46,3 @@ section {
 .contact {
     
 }
-*/

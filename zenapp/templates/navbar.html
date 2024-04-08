@@ -9,15 +9,15 @@
 </head>
 <body>
     <header class="header" id="header">
-        <a href="#home" class="logo">Zenith</a>
+        <a href="#home" class="logo" onclick="diffPageLink(event)">Zenith</a>
 
         <button class="hamburger-button" onclick="toggleMenu()" id="hamburger-button"></button>
         <div class="hamburger-menu" id ="hamburger-menu">
-            <a href="#home" onclick="toggleMenu()">Home</a>
+            <a href="#home" onclick="toggleMenu(event)">Home</a>
             <a href="{% url 'shop' %}">Shop</a>
-            <a href="#about" onclick="toggleMenu()">About</a>
-            <a href="#customs" onclick="toggleMenu()">Customs</a>
-            <a href="#contact" onclick="toggleMenu()">Contact</a>
+            <a href="#about" onclick="toggleMenu(event)">About</a>
+            <a href="#customs" onclick="toggleMenu(event)">Customs</a>
+            <a href="#contact" onclick="toggleMenu(event)">Contact</a>
         </div>
         
         <nav class="navbar">
@@ -49,10 +49,24 @@
             }
         }
 
-        function toggleMenu() {
+        function toggleMenu(event) {
             var ham_menu = document.getElementById("hamburger-menu");
             ham_menu.classList.toggle("show");
+            if (event) {
+                diffPageLink(event);
+            }
         }
+
+        //Fixes inital element shift
+        window.onload = function() {
+            var page_title = document.title;
+            if (page_title == "Dashboard") {
+                var homeLink = document.querySelector('.navbar a[href="#home"]');
+                if (homeLink) {
+                    homeLink.click();
+                }
+            }
+        };
     </script>
 
 </body>

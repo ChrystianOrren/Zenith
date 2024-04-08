@@ -22,7 +22,8 @@ body, html {
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background: white;
+    background: #2D82B7;
+    color: #F3DFBF;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +31,7 @@ body, html {
 
 .logo {
     font-size: 32px;
-    color: #42E2B8;
+    color: #F3DFBF;
     text-decoration: none;
     font-weight: 700;
 }
@@ -47,7 +48,7 @@ body, html {
     .navbar a {
         position: relative;
         font-size: 24px;
-        color: #42E2B8;
+        color: #F3DFBF;
         font-weight: 500;
         text-decoration: none;
         margin-left: 40px;
@@ -60,7 +61,7 @@ body, html {
         left: 0;
         width: 0;
         height: 2px;
-        background: #42E2B8;
+        background: #F3DFBF;
         transition: .3s;
     }
     
@@ -83,7 +84,7 @@ body, html {
         height: 40px;
         border: none;
         cursor: pointer;
-        color: #42E2B8;
+        color: #F3DFBF;
         background-color: transparent;
     }
     
@@ -94,8 +95,7 @@ body, html {
         left: 0;
         width: 100%;
         max-height: calc(100vh - 100px - 16px);
-        
-        background-color: white;
+        background-color: #2D82B7;
         text-decoration: none;
     }
     
@@ -109,12 +109,12 @@ body, html {
         padding: 10px;
         text-decoration: none;
         padding-left: 100px;
-        color: #42E2B8;
+        color: #F3DFBF;
         font-size: 24px;
         font-weight: 500;
     }
     
     .hamburger-menu a:hover {
-        background-color: lightgray;
+        background-color: darkblue;
     }
 }
