@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <script src="https://kit.fontawesome.com/77237e4182.js" crossorigin="anonymous"></script>
 </head>
 <body>
     {% include 'navbar.html' %}
@@ -15,21 +16,90 @@
         </section>
 
         <section id="about" class="about">
-            <div class="imgs">
-                <h1>Test</h1>
+            <div class="slider-container">
+                <div class="slider">
+                    <img id="slide1" src="{% static 'images/slide1.jpg'%}" alt="slide1">
+                    <img id="slide2" src="{% static 'images/slide2.jpg'%}" alt="slide2">
+                    <img id="slide3" src="{% static 'images/slide3.jpg'%}" alt="slide3">
+                    <img id="slide4" src="{% static 'images/slide4.jpg'%}" alt="slide4">
+                </div>
+                <div class="slider-nav">
+                    <span class="dot" onclick="currentSlide(1)" id="dot1"></span>
+                    <span class="dot" onclick="currentSlide(2)" id="dot2"></span>
+                    <span class="dot" onclick="currentSlide(3)" id="dot3"></span>
+                    <span class="dot" onclick="currentSlide(4)" id="dot4"></span>
+                </div>
             </div>
-            <div>
-                <h1>Test</h1>
+            <div class="about-text">
+                <h1>About Us.</h1>
+                <br>
+                <br>
+                <h2>We are passionate about crafting high-quality, custom surfboards tailored to your unique style and preferences.</h2>
+                <br>
+                <br>
+                <h2>Founded by friends Chrystian and Logan, our surfboard workshop is a labor of love where every board is meticulously handcrafted with care and attention to detail.</h2>
+                <br>
+                <br>
+                <h2>Central Florida based.</h2>
             </div>
         </section>
 
         <section id="customs" class="customs">
-            <h1>Customs</h1>
+            <h1>Get a Zenith custom now.</h1>
+            <div class="customs-container">
+                <h2>Please provide us with details of your custom surfboard requirements, including dimensions, budget, and preferred colors.
+                    <br>
+                    Once received, we'll promptly get back to you to discuss your vision further.
+                </h2>
+                <div class="form">
+                    <input type="text" id="name" name="name" placeholder="Name"/>
+                    <input type="email" id="mail" name="email" placeholder="Email"/>
+                    <textarea id="description" placeholder="Give us a description of what you are looking for. Dims, budget, colors. We'll get back to you."></textarea>
+                    <p id="err-allfields" class="err-txt">Please enter all fields</p>
+                    <button class="sub-but" role="button" onclick="submitDec()">Submit</button>
+                </div>
+            </div>
         </section>
 
         <section id="contact" class="contact">
-            <h1>Contact</h1>
+            <h1>Contact Us.</h1>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <div class="icon-background">
+                        <span style="color: #F3DFBF">
+                            <i class="fa-solid fa-location-dot fa-7x" style="cursor: pointer;"></i>
+                        </span>
+                    </div>
+                    <h2>3020 Kananwood Ct #1024, Oviedo, FL 32765</h2>
+                </div>
+                <div class="contact-card">
+                    <div class="icon-background">
+                        <span style="color: #F3DFBF">
+                            <i class="fa-regular fa-envelope fa-7x" style="cursor: pointer;"></i>
+                        </span>
+                    </div>
+                    <h2>zenithshapers@gmail.com</h2>
+                </div>
+                <div class="contact-card">
+                    <div class="icon-background">
+                        <span style="color: #F3DFBF">
+                            <i class="fa-brands fa-instagram fa-7x" style="cursor: pointer;"></i>
+                        </span>
+                    </div>
+                    <h2>N/A</h2>
+                </div>
+                <div class="contact-card">
+                    <div class="icon-background">
+                        <span style="color: #F3DFBF">
+                            <i class="fa-brands fa-facebook fa-7x" style="cursor: pointer;"></i>
+                        </span>
+                    </div>
+                    <h2>N/A</h2>
+                </div>
+            </div>
         </section>
     </div>
+
+    <script src="{% static 'js/dashboard.js' %}"></script>
 </body>
 </html>
