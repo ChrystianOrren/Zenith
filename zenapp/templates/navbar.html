@@ -30,44 +30,7 @@
 
     </header>
 
-    <script>
-        function diffPageLink(event) {
-            var page_title = document.title
-            var href = event.target.getAttribute("href");
-            if (page_title == "Dashboard") {
-                console.log("Dashboard");
-            }
-            else{
-                if (href && href.startsWith("#")) {
-                    console.log("Redirecting to Dashboard: ", href);
-                    return_path = "/" + href;
-                    window.location.href = return_path;
-                }
-                else {
-                    return;
-                }
-            }
-        }
-
-        function toggleMenu(event) {
-            var ham_menu = document.getElementById("hamburger-menu");
-            ham_menu.classList.toggle("show");
-            if (event) {
-                diffPageLink(event);
-            }
-        }
-
-        //Fixes inital element shift
-        window.onload = function() {
-            var page_title = document.title;
-            if (page_title == "Dashboard") {
-                var homeLink = document.querySelector('.navbar a[href="#home"]');
-                if (homeLink) {
-                    homeLink.click();
-                }
-            }
-        };
-    </script>
-
+    <script src="{% static 'js/navbar.js' %}"></script>
+    
 </body>
 </html>

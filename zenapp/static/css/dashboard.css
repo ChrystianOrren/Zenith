@@ -33,10 +33,26 @@ section {
     background-image: url("../images/FB_background.jpg");
     background-size: cover;
     background-position: center;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+}
+
+.home h1{
+    font-size: 80px;
+    font-weight: 900;
+    background: #2D82B7;
+    color: #F3DFBF;
+    padding: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
 }
 
 .about {
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .customs {
