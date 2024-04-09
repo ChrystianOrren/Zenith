@@ -1,7 +1,8 @@
 let startSlide = 1;
-currentSlide(startSlide)
+let currentSlide = 1;
+showSlide(startSlide)
 
-function currentSlide(num) {
+function showSlide(num) {
     for (var i = 1; i <= 4; i++) {
         var slide = document.getElementById("slide" + i);
         var dot = document.getElementById("dot" + i);
@@ -12,9 +13,13 @@ function currentSlide(num) {
     var dot = document.getElementById("dot" + num);
     slide.style.display= "block";
     dot.classList.add('active');
+    currentSlide = num;
 }
 
-
+function plusSlides(num) {
+    currentSlide += num;
+    showSlide(currentSlide);
+}
 
 function submitDec() {
     var name = document.getElementById("name").value;

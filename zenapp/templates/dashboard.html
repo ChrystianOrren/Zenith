@@ -18,16 +18,18 @@
         <section id="about" class="about">
             <div class="slider-container">
                 <div class="slider">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <img id="slide1" src="{% static 'images/slide1.jpg'%}" alt="slide1">
                     <img id="slide2" src="{% static 'images/slide2.jpg'%}" alt="slide2">
                     <img id="slide3" src="{% static 'images/slide3.jpg'%}" alt="slide3">
                     <img id="slide4" src="{% static 'images/slide4.jpg'%}" alt="slide4">
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
                 <div class="slider-nav">
-                    <span class="dot" onclick="currentSlide(1)" id="dot1"></span>
-                    <span class="dot" onclick="currentSlide(2)" id="dot2"></span>
-                    <span class="dot" onclick="currentSlide(3)" id="dot3"></span>
-                    <span class="dot" onclick="currentSlide(4)" id="dot4"></span>
+                    <span class="dot" onclick="showSlide(1)" id="dot1"></span>
+                    <span class="dot" onclick="showSlide(2)" id="dot2"></span>
+                    <span class="dot" onclick="showSlide(3)" id="dot3"></span>
+                    <span class="dot" onclick="showSlide(4)" id="dot4"></span>
                 </div>
             </div>
             <div class="about-text">
