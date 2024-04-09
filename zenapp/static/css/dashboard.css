@@ -272,6 +272,11 @@ section {
 }
 
 .contact-card h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.contact-card h2 {
     margin-top: 20px;
 }
 
