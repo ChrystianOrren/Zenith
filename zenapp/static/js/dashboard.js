@@ -36,4 +36,12 @@ function submitDec() {
         errtxt.style.display = "none";
     }
 
+    var data = {
+        name: name,
+        email: email,
+        description: description
+    };
+
+    
+
 }
