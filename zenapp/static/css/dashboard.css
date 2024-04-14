@@ -22,7 +22,7 @@ body, html {
 section {
     flex: 1; 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: #F3DFBF; 
     border: 1px solid black;
@@ -35,7 +35,6 @@ section {
     background-position: center;
     justify-content: flex-start;
     align-items: flex-end;
-
 }
 
 .home h1{
@@ -45,7 +44,7 @@ section {
     color: #F3DFBF;
     padding: 20px;
     margin-left: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
 }
 
 .about {
@@ -128,8 +127,6 @@ section {
     font-weight: 700;
 }
 
-
-
 .customs {
     display: flex;
     flex-direction: column;
@@ -159,7 +156,7 @@ section {
     width: 50%;
 }
 
-.form {
+.inqury-form {
     display: flex;
     flex-direction: column;
     justify-content: center;

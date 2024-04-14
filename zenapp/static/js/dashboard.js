@@ -35,13 +35,4 @@ function submitDec() {
         var errtxt = document.getElementById("err-allfields");
         errtxt.style.display = "none";
     }
-
-    var data = {
-        name: name,
-        email: email,
-        description: description
-    };
-
-    
-
 }

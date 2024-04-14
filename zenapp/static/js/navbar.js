@@ -34,15 +34,3 @@ function timedRedirect() {
         localStorage.removeItem('redirect')
     }
 }
-
-// Fix initial element shift
-window.onload = function() {
-    var page_title = document.title;
-    if (page_title == "Dashboard") {
-        var homeLink = document.querySelector('.navbar a[href="#home"]');
-        if (homeLink) {
-            homeLink.click();
-            timedRedirect();
-        }
-    }
-};
