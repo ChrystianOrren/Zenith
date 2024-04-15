@@ -22,14 +22,35 @@ function plusSlides(num) {
 }
 
 window.onload = function() {
-    document.getElementById("board_form").reset();
-    var pos_suc = document.getElementById("suc-txt");
-    var post_context = "{{ post_success }}"
-    console.log("here");
-    if (post_context) {
-        pos_suc.style.display = "block";
-    }
-    else{
-        pos_suc.style.display = "none";
-    }
+
 };
+
+function submitClick(event){
+    event.preventDefault(); // Prevent default form submission
+    
+    var form = document.getElementById("board_form");
+    if (!form.checkValidity()) {
+        console.log("Form is not valid");
+        return;
+    }
+
+    // Serialize form data
+    var formData = new FormData(form);
+
+    // Send form data via AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", form.action);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log("Form submitted successfully");
+                document.getElementById("suc-txt").style.display = "block"; // Show success message
+                form.reset(); // Optionally, reset the form
+            } else {
+                console.error("Form submission failed");
+                // Optionally, handle the error
+            }
+        }
+    };
+    xhr.send(formData);
+}

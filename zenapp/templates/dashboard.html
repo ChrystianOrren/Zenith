@@ -56,8 +56,8 @@
                 <form class="inqury-form" action="" method="POST" id="board_form" autocomplete="off">
                     {% csrf_token %}
                     {{ form }}
-                    <!--<p class="suc-txt" id="suc-txt">Thank you! We'll get back to you.</p>-->
-                    <button class="sub-but" type="submit">Submit</button>
+                    <p class="suc-txt" id="suc-txt">Thank you! We'll get back to you.</p>
+                    <button class="sub-but" type="submit" onclick="submitClick(event)">Submit</button>
                 </form>
             </div>
         </section>

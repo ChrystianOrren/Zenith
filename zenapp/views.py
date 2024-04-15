@@ -11,23 +11,19 @@ from .forms import BoardForm
 # Create your views here.
 
 def dashboard(request):
-    board_form = BoardForm()
-    form_success = False
-
     if request.method == 'POST':
-        board_form = BoardForm(request.POST)
-        if board_form.is_valid():
-            board_form.save()
-            form_success = True
+        form = BoardForm(request.POST)
+        if form.is_valid():
+            form.save()
             return redirect('dashboard')
-
+        else:
+            pass
+    else:
+        board_form = BoardForm()
 
     context = {
-        'form': board_form,
-        'form_success': form_success,
+        'form': board_form
     }
-
-    # Render the dashboard page with the form and form success flag
     return render(request, 'dashboard.html', context)
 
 def shop(request):
