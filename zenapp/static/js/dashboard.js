@@ -21,18 +21,15 @@ function plusSlides(num) {
     showSlide(currentSlide);
 }
 
-function submitDec() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("mail").value;
-    var description = document.getElementById("description").value;
-
-    if (!name || !email || !description) {
-        var errtxt = document.getElementById("err-allfields");
-        errtxt.style.display = "block";
-        return;
+window.onload = function() {
+    document.getElementById("board_form").reset();
+    var pos_suc = document.getElementById("suc-txt");
+    var post_context = "{{ post_success }}"
+    console.log("here");
+    if (post_context) {
+        pos_suc.style.display = "block";
     }
-    else {
-        var errtxt = document.getElementById("err-allfields");
-        errtxt.style.display = "none";
+    else{
+        pos_suc.style.display = "none";
     }
-}
+};

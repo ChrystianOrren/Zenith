@@ -233,6 +233,13 @@ section {
     font-size: 20px;
 }
 
+.suc-txt{
+    color: green;
+    display: none;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
 .contact {
     display: flex;
     flex-direction: column;

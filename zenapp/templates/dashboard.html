@@ -53,12 +53,11 @@
                     <br>
                     Once received, we'll promptly get back to you to discuss your vision further.
                 </h2>
-                <form class="inqury-form" action="" method="POST">{% csrf_token %}
-                    <input type="text" id="name" name="name" placeholder="Name"/>
-                    <input type="email" id="mail" name="email" placeholder="Email"/>
-                    <textarea id="desc" name= "desc" placeholder="Give us a description of what you are looking for. Dims, budget, colors. We'll get back to you."></textarea>
-                    <p id="err-allfields" class="err-txt">Please enter all fields</p>
-                    <button class="sub-but" type="submit" onclick="submitDec()">Submit</button>
+                <form class="inqury-form" action="" method="POST" id="board_form" autocomplete="off">
+                    {% csrf_token %}
+                    {{ form }}
+                    <!--<p class="suc-txt" id="suc-txt">Thank you! We'll get back to you.</p>-->
+                    <button class="sub-but" type="submit">Submit</button>
                 </form>
             </div>
         </section>

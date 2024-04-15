@@ -15,12 +15,48 @@ body, html {
     margin: 0;
     height: 100%;
     width: 100%;
+    background-color: #F3DFBF;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #F3DFBF;
-    height: 100vh;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    gap: 20px;
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}
+
+.data-card {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #F8EBD3;
+    flex-shrink: 0; /* Prevent item from shrinking */
+}
+
+.data-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.data-card img {
+    width: 50%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: round the corners of the image */
+}
+
+.data-card p {
+    margin: 10px 0; /* Add some space above and below paragraphs */
+    text-align: center; /* Center text horizontally */
 }
