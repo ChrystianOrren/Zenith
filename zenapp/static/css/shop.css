@@ -20,8 +20,8 @@ body, html {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
-    gap: 20px;
+    gap: 0;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     height: calc(100vh - 80px);
     width: 100%;
     overflow-y: scroll;
@@ -30,20 +30,22 @@ body, html {
 }
 
 .data-card {
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 20px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
     box-sizing: border-box;
     cursor: pointer;
     background-color: #F8EBD3;
-    flex-shrink: 0; /* Prevent item from shrinking */
+    flex-shrink: 0;
+    max-width: 500px;
+    max-height: 500px;
 }
 
 .data-card:hover {
@@ -56,7 +58,85 @@ body, html {
     border-radius: 5px; /* Optional: round the corners of the image */
 }
 
-.data-card p {
-    margin: 10px 0; /* Add some space above and below paragraphs */
-    text-align: center; /* Center text horizontally */
+.board-pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: white;
+    width: 950px;
+    max-width: 90%;
+    padding: 20px;
+    height: 60%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    font-size: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.popUpContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.popUpLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.popUpRight {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    overflow-y: scroll;
+}
+
+.purchaseInfo{
+    display: none;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.popUpRight button{
+    display: inline-block;
+    margin: 20px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    background: #2D82B7;
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #07004d;
+    height: 48px;
+    padding: 0 32px;
+    font-size: 24px;
+    font-weight: 800;
+    border-radius: 6px;
+    color: #F3DFBF;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+}
+.popUpRight button:hover {
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #07004d;
+    transform: translateY(-2px);
+}
+.popUpRight button:active{
+    box-shadow: inset 0px 3px 7px #07004d;
+    transform: translateY(2px);
 }

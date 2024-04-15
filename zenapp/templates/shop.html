@@ -11,15 +11,37 @@
     </head>
     <body>
         {% include 'navbar.html' %}
-        <div class="grid-container">
+        <div class="grid-container" id="grid">
             {% for item in data %}
-                <div class="data-card" onclick="clickCard()">
+                <div class="data-card" onclick="clickCard('{{ item.picture.url }}', '{{ item.shaper }}', '{{ item.number }}', '{{ item.description }}')">
                     <img src="{{ item.picture.url }}" alt="Picture">
                     <h1>{{ item.shaper }} - {{ item.number }}</h1>
-                    <h2>{{ item.description }}</h2>
+                    <!-- <h2>{{ item.description }}</h2> -->
                 </div>
             {% endfor %}
         </div>
+        <div class="board-pop-up" id="popUp">
+            <button id="closeBtn" class="close-btn" onclick="closePopUp()">&times;</button>
+            <div class="popUpContainer">
+                <div class="popUpLeft">
+                    <h1 id="shaperNum" style="text-align: center;">Shaper and Number</h1>
+                    <img id="popUpImg" src="" alt="Surfboard" style="width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <div class="popUpRight">
+                    <h2 id="description" style="margin-left: 20px; margin-right: 20px;">Description</h2>
+                    <button onclick="purchaseClick()" id="purchaseBtn">Purchase</button>
+                    <div class="purchaseInfo" id="purchaseInfo">
+                        <p>Thank you for your interest in our custom surfboards! To purchase one of our boards, please reach out to us via any of the following methods:</p>
+                        <br>
+                        <p>Socials: </p>
+                        <p>Email: zenithshapers@gmail.com</p>
+                        <p>Text: +1 (386)283-3327</p>
+                        <br>
+                        <p>Please note that all purchases are completed securely through third-party payment services such as PayPal, Venmo, Zelle, or Cash App.</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
     </body>
 
     <script src="{% static 'js/shop.js' %}"></script>
