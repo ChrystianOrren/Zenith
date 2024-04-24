@@ -118,9 +118,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = '/home/ubuntu/zenith/zenapp/static'
-STATICFILES_DIRS = [
-    '/home/ubuntu/zenith/zenapp/static/',
-]
 
 
 # Default primary key field type
