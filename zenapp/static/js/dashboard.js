@@ -17,6 +17,16 @@ function showSlide(num) {
 }
 
 function plusSlides(num) {
+    if (num == -1 &&  currentSlide == 1){
+        currentSlide = 4
+        showSlide(currentSlide);
+        return;
+    }
+    else if (num == 1 && currentSlide == 4) {
+        currentSlide = 1
+        showSlide(currentSlide);
+        return;
+    }
     currentSlide += num;
     showSlide(currentSlide);
 }
