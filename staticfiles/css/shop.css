@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&family=Original+Surfer&display=swap');
+
+*{
+    font-family: "Edu QLD Beginner", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #F3DFBF;
+}
+
+.grid-container {
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}
+
+.data-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #F8EBD3;
+    flex-shrink: 0;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.data-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.data-card img {
+    width: 50%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: round the corners of the image */
+}
+
+.board-pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: white;
+    width: 950px;
+    max-width: 90%;
+    padding: 20px;
+    height: 60%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    font-size: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.popUpContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.popUpLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.popUpRight {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    overflow-y: scroll;
+}
+
+.purchaseInfo{
+    display: none;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.popUpRight button{
+    display: inline-block;
+    margin: 20px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    background: #2D82B7;
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #07004d;
+    height: 48px;
+    padding: 0 32px;
+    font-size: 24px;
+    font-weight: 800;
+    border-radius: 6px;
+    color: #F3DFBF;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+}
+.popUpRight button:hover {
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #07004d;
+    transform: translateY(-2px);
+}
+.popUpRight button:active{
+    box-shadow: inset 0px 3px 7px #07004d;
+    transform: translateY(2px);
+}

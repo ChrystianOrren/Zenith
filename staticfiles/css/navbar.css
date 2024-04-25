@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&family=Original+Surfer&display=swap');
+
+*{
+    font-family: "Edu QLD Beginner", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow: hidden;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #2D82B7;
+    color: #F3DFBF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    color: #F3DFBF;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media (min-width: 769px){  
+    .hamburger-menu {
+        display: none;
+    }
+
+    .hamburger-button {
+        display: none;
+    }
+
+    .navbar a {
+        position: relative;
+        font-size: 24px;
+        color: #F3DFBF;
+        font-weight: 500;
+        text-decoration: none;
+        margin-left: 40px;
+    }
+    
+    .navbar a::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #F3DFBF;
+        transition: .3s;
+    }
+    
+    .navbar a:hover::before {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .hamburger-button {
+        display: block;
+        background-image: url('../images/hamburger.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 40px; 
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        color: #F3DFBF;
+        background-color: transparent;
+    }
+    
+    .hamburger-menu{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 100px - 16px);
+        background-color: #2D82B7;
+        text-decoration: none;
+    }
+    
+    .hamburger-menu.show {
+        display: block;
+    }
+    
+    .hamburger-menu a {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        text-decoration: none;
+        padding-left: 100px;
+        color: #F3DFBF;
+        font-size: 24px;
+        font-weight: 500;
+    }
+    
+    .hamburger-menu a:hover {
+        background-color: darkblue;
+    }
+}
