@@ -64,3 +64,15 @@ function submitClick(event){
     };
     xhr.send(formData);
 }
+
+function copyEmailToClipboard(){
+    navigator.clipboard.writeText("zenithshapers@gmail.com")
+    .then(() => {
+      /* Alert the user that the text has been copied */
+      alert("Text copied to clipboard!");
+    })
+    .catch(err => {
+      /* Handle any errors that may occur */
+      console.error('Error copying text: ', err);
+    });
+}   
